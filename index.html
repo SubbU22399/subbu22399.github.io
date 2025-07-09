@@ -61,6 +61,12 @@
         z-index: 30;
         transition: width 0.3s ease;
       }
+      .profile-img {
+        transition: transform 0.3s ease;
+      }
+      .profile-img:hover {
+        transform: scale(1.05);
+      }
       @media (max-width: 768px) {
         .nav-menu {
           display: none;
@@ -105,7 +111,14 @@
     <!-- Profile Section -->
     <section id="profile" class="py-16 bg-gradient-to-b from-white to-gray-50">
       <div class="container mx-auto px-6 md:px-12">
-        <div class="section-card bg-white p-8 rounded-xl shadow-md fade-in">
+        <div class="section-card bg-white p-8 rounded-xl shadow-md fade-in text-center">
+          <!-- Profile Photo -->
+          <!-- Replace the src URL below with the path to your personal profile photo -->
+          <img
+            src="https://photos.fife.usercontent.google.com/pw/AP1GczP1fKcXQ0OIxvEyDJ-Ka47EpdyrNSYAORPj3RZXN3430cJ-DpSpKHGDPA=w911-h911-s-no-gm?authuser=0"
+            alt="Profile photo of Urimilla Subbarayadu"
+            class="profile-img w-32 h-32 rounded-full mx-auto mb-6 border-4 border-indigo-100 shadow-md object-cover"
+          />
           <h2 class="text-4xl font-bold mb-6 text-gray-900">Automation & Integration Engineer</h2>
           <p class="text-lg max-w-3xl mx-auto text-gray-700 leading-relaxed">
             Passionate Automation Engineer with expertise in integration solutions, delivering efficient workflows and robust systems. Proficient in frontend technologies, showcasing skills through this dynamic resume webpage.
