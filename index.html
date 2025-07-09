@@ -3,294 +3,163 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      URIMILLA SUBBARAYADU - Automation & Integration Engineer Resume
-    </title>
+    <title>URIMILLA SUBBARAYADU - Automation & Integration Engineer Resume</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-7NX62DPMWY"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    
-    gtag('config', 'G-7NX62DPMWY');
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-7NX62DPMWY');
     </script>
     <style>
       body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         scroll-behavior: smooth;
       }
       .hidden {
         display: none;
       }
+      .skill {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .skill:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      }
+      .nav-link {
+        transition: color 0.3s ease;
+      }
+      .nav-link:hover {
+        color: #93c5fd;
+      }
+      @media (max-width: 768px) {
+        .nav-menu {
+          display: none;
+        }
+        .nav-menu.active {
+          display: flex;
+        }
+      }
     </style>
   </head>
-  <body class="bg-gray-100 text-gray-800">
+  <body class="bg-gray-50 text-gray-900 antialiased">
     <!-- Navigation -->
-    <nav class="bg-blue-600 text-white p-3 sticky top-0 z-10">
+    <nav class="bg-blue-700 text-white p-4 sticky top-0 z-20 shadow-lg">
       <div class="container mx-auto flex justify-between items-center">
-        <h1 class="text-xl font-bold">URIMILLA SUBBARAYADU</h1>
-        <div class="space-x-4">
-          <a href="#profile" class="hover:underline">Profile</a>
-          <a href="#skills" class="hover:underline">Skills</a>
-          <a href="#experience" class="hover:underline">Experience</a>
-          <a href="#education" class="hover:underline">Education</a>
-          <a href="#contact" class="hover:underline">Contact</a>
+        <h1 class="text-2xl font-bold tracking-tight">URIMILLA SUBBARAYADU</h1>
+        <button id="menu-toggle" class="md:hidden text-white focus:outline-none" aria-label="Toggle navigation">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+          </svg>
+        </button>
+        <div class="nav-menu hidden md:flex space-x-6" id="nav-menu">
+          <a href="#profile" class="nav-link hover:underline" aria-label="Profile Section">Profile</a>
+          <a href="#skills" class="nav-link hover:underline" aria-label="Skills Section">Skills</a>
+          <a href="#experience" class="nav-link hover:underline" aria-label="Experience Section">Experience</a>
+          <a href="#education" class="nav-link hover:underline" aria-label="Education Section">Education</a>
+          <a href="#contact" class="nav-link hover:underline" aria-label="Contact Section">Contact</a>
         </div>
       </div>
     </nav>
 
     <!-- Profile Section -->
-    <section id="profile" class="py-10 bg-white">
-      <div class="container mx-auto px-4 text-center">
-        <h2 class="text-3xl font-bold mb-4">
-          Automation & Integration Engineer
-        </h2>
-        <p class="text-lg max-w-2xl mx-auto">
-          Passionate Automation Engineer with expertise in integration
-          solutions, delivering efficient workflows and robust systems.
-          Proficient in frontend technologies, showcasing skills through this
-          dynamic resume webpage.
+    <section id="profile" class="py-16 bg-white">
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-4xl font-bold mb-6 text-gray-900">Automation & Integration Engineer</h2>
+        <p class="text-lg max-w-3xl mx-auto text-gray-700 leading-relaxed">
+          Passionate Automation Engineer with expertise in integration solutions, delivering efficient workflows and robust systems. Proficient in frontend technologies, showcasing skills through this dynamic resume webpage.
         </p>
       </div>
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-10 bg-gray-100">
-      <div class="container mx-auto px-4">
-        <h2 class="text-2xl font-bold mb-4 text-center">Skills</h2>
-        <div class="flex justify-center mb-6">
-          <button
-            onclick="filterSkills('all')"
-            class="px-4 py-2 bg-blue-600 text-white rounded mr-2"
-          >
-            All
-          </button>
-          <button
-            onclick="filterSkills('automation')"
-            class="px-4 py-2 bg-blue-600 text-white rounded mr-2"
-          >
-            Automation
-          </button>
-          <button
-            onclick="filterSkills('integration')"
-            class="px-4 py-2 bg-blue-600 text-white rounded mr-2"
-          >
-            Integration
-          </button>
-          <button
-            onclick="filterSkills('frontend')"
-            class="px-4 py-2 bg-blue-600 text-white rounded mr-2"
-          >
-            Frontend
-          </button>
-          <button
-            onclick="filterSkills('Tools')"
-            class="px-4 py-2 bg-blue-600 text-white rounded"
-          >
-            Tools
-          </button>
+    <section id="skills" class="py-16 bg-gray-100">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold mb-6 text-center text-gray-900">Skills</h2>
+        <div class="flex flex-wrap justify-center mb-8 gap-2">
+          <button onclick="filterSkills('all')" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors" aria-label="Show All Skills">All</button>
+          <button onclick="filterSkills('automation')" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors" aria-label="Show Automation Skills">Automation</button>
+          <button onclick="filterSkills('integration')" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors" aria-label="Show Integration Skills">Integration</button>
+          <button onclick="filterSkills('frontend')" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors" aria-label="Show Frontend Skills">Frontend</button>
+          <button onclick="filterSkills('Tools')" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors" aria-label="Show Tools Skills">Tools</button>
         </div>
-        <div id="skills-list" class="grid grid-cols-1 md:grid-cols-3 gap-3">
-          <div class="skill automation p-3 bg-white rounded shadow">
-            JavaScript (Automation Scripts)
-          </div>
-          <div class="skill automation p-3 bg-white rounded shadow">
-            Selenium WebDriver
-          </div>
-          <div class="skill automation p-3 bg-white rounded shadow">
-            ios and andriod App Automation
-          </div>
-          <div class="skill automation p-3 bg-white rounded shadow">
-            STB Automation
-          </div>
-          <div class="skill automation p-3 bg-white rounded shadow">
-            manual Testing
-          </div>
-          <div class="skill automation p-3 bg-white rounded shadow">
-            Regression Testing
-          </div>
-          <div class="skill automation p-3 bg-white rounded shadow">
-            Jenkins CI/CD
-          </div>
-          <div class="skill integration p-3 bg-white rounded shadow">
-            REST APIs
-          </div>
-          <div class="skill integration p-3 bg-white rounded shadow">
-            Bit-Bucket Pipelines
-          </div>
-
-          <div class="skill integration p-3 bg-white rounded shadow">
-            linux Commands
-          </div>
-          <div class="skill integration p-3 bg-white rounded shadow">
-            network protocols
-          </div>
-          <div class="skill integration p-3 bg-white rounded shadow">
-            End to End Testing
-          </div>
-          <div class="skill frontend p-3 bg-white rounded shadow">HTML/CSS</div>
-          <div class="skill frontend p-3 bg-white rounded shadow">
-            JavaScript
-          </div>
-          <div class="skill frontend p-3 bg-white rounded shadow">
-            Tailwind CSS
-          </div>
-          <div class="skill Tools p-3 bg-white rounded shadow">Velocix CDN</div>
-          <div class="skill Tools p-3 bg-white rounded shadow">
-            Google Media CDN
-          </div>
-          <div class="skill Tools p-3 bg-white rounded shadow">Akamai CDN</div>
-          <div class="skill Tools p-3 bg-white rounded shadow">
-            AWS S3 Buckets
-          </div>
-          <div class="skill Tools p-3 bg-white rounded shadow">Bit-Bucket</div>
-          <div class="skill Tools p-3 bg-white rounded shadow">Airflow</div>
-          <div class="skill Tools p-3 bg-white rounded shadow">
-            MDC (Media Delivery Console)
-          </div>
-          <div class="skill Tools p-3 bg-white rounded shadow">
-            Charles Proxy
-          </div>
-          <div class="skill Tools p-3 bg-white rounded shadow">CADENT</div>
-          <div class="skill Tools p-3 bg-white rounded shadow">
-            wiki Documentation
-          </div>
-          <div class="skill Tools p-3 bg-white rounded shadow">Transcoders</div>
-          <div class="skill Tools p-3 bg-white rounded shadow">Encoders</div>
-          <div class="skill Tools p-3 bg-white rounded shadow">Grafana</div>
-          <div class="skill Tools p-3 bg-white rounded shadow">Kibana</div>
-          <div class="skill Tools p-3 bg-white rounded shadow">Postman</div>
-          <div class="skill Tools p-3 bg-white rounded shadow">JIRA</div>
-          <div class="skill Tools p-3 bg-white rounded shadow">
-            Visual Studios Code
-          </div>
+        <div id="skills-list" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div class="skill automation p-4 bg-white rounded-lg shadow-md">JavaScript (Automation Scripts)</div>
+          <div class="skill automation p-4 bg-white rounded-lg shadow-md">Selenium WebDriver</div>
+          <div class="skill automation p-4 bg-white rounded-lg shadow-md">iOS and Android App Automation</div>
+          <div class="skill automation p-4 bg-white rounded-lg shadow-md">STB Automation</div>
+          <div class="skill automation p-4 bg-white rounded-lg shadow-md">Manual Testing</div>
+          <div class="skill automation p-4 bg-white rounded-lg shadow-md">Regression Testing</div>
+          <div class="skill automation p-4 bg-white rounded-lg shadow-md">Jenkins CI/CD</div>
+          <div class="skill integration p-4 bg-white rounded-lg shadow-md">REST APIs</div>
+          <div class="skill integration p-4 bg-white rounded-lg shadow-md">Bitbucket Pipelines</div>
+          <div class="skill integration p-4 bg-white rounded-lg shadow-md">Linux Commands</div>
+          <div class="skill integration p-4 bg-white rounded-lg shadow-md">Network Protocols</div>
+          <div class="skill integration p-4 bg-white rounded-lg shadow-md">End-to-End Testing</div>
+          <div class="skill frontend p-4 bg-white rounded-lg shadow-md">HTML/CSS</div>
+          <div class="skill frontend p-4 bg-white rounded-lg shadow-md">JavaScript</div>
+          <div class="skill frontend p-4 bg-white rounded-lg shadow-md">Tailwind CSS</div>
+          <div class="skill Tools p-4 bg-white rounded-lg shadow-md">Velocix CDN</div>
+          <div class="skill Tools p-4 bg-white rounded-lg shadow-md">Google Media CDN</div>
+          <div class="skill Tools p-4 bg-white rounded-lg shadow-md">Akamai CDN</div>
+          <div class="skill Tools p-4 bg-white rounded-lg shadow-md">AWS S3 Buckets</div>
+          <div class="skill Tools p-4 bg-white rounded-lg shadow-md">Bitbucket</div>
+          <div class="skill Tools p-4 bg-white rounded-lg shadow-md">Airflow</div>
+          <div class="skill Tools p-4 bg-white rounded-lg shadow-md">MDC (Media Delivery Console)</div>
+          <div class="skill Tools p-4 bg-white rounded-lg shadow-md">Charles Proxy</div>
+          <div class="skill Tools p-4 bg-white rounded-lg shadow-md">CADENT</div>
+          <div class="skill Tools p-4 bg-white rounded-lg shadow-md">Wiki Documentation</div>
+          <div class="skill Tools p-4 bg-white rounded-lg shadow-md">Transcoders</div>
+          <div class="skill Tools p-4 bg-white rounded-lg shadow-md">Encoders</div>
+          <div class="skill Tools p-4 bg-white rounded-lg shadow-md">Grafana</div>
+          <div class="skill Tools p-4 bg-white rounded-lg shadow-md">Kibana</div>
+          <div class="skill Tools p-4 bg-white rounded-lg shadow-md">Postman</div>
+          <div class="skill Tools p-4 bg-white rounded-lg shadow-md">JIRA</div>
+          <div class="skill Tools p-4 bg-white rounded-lg shadow-md">Visual Studio Code</div>
         </div>
       </div>
     </section>
 
     <!-- Experience Section -->
-    <section id="experience" class="py-10 bg-white">
-      <div class="container mx-auto px-4">
-        <h2 class="text-2xl font-bold mb-4 text-center">Experience</h2>
-        <div class="space-y-6">
+    <section id="experience" class="py-16 bg-white">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold mb-6 text-center text-gray-900">Experience</h2>
+        <div class="space-y-8">
           <div>
-            <h3 class="text-xl font-semibold">
-              Integration Engineer - [Infosys]
-            </h3>
+            <h3 class="text-2xl font-semibold text-gray-900">Integration Engineer - Infosys</h3>
             <p class="text-gray-600">Feb 2023 - Present</p>
-            <ul class="list-disc ml-6">
-              <li>
-                Supported feature deployments by coordinating with development
-                and operations teams to ensure seamless integration.
-              </li>
-              <li>
-                Monitored deployment pipelines and resolved integration issues
-                in real-time to minimize downtime.
-              </li>
-              <li>
-                Acted as a primary point of contact for client communications
-                regarding integration requirements and deployment schedules.
-              </li>
-              <li>
-                Gathered client feedback and translated it into actionable
-                improvements for integration processes.
-              </li>
-              <li>
-                Provided technical support and documentation to clients during
-                and after feature rollouts.
-              </li>
-              <li>
-                Collaborated with the streaming team to support live and
-                on-demand video delivery, ensuring high availability and
-                performance.
-              </li>
-              <li>
-                Diagnosed and resolved streaming-related issues by analyzing
-                logs and monitoring dashboards (Grafana, Kibana).
-              </li>
-              <li>
-                Automated validation of streaming endpoints and playback
-                scenarios to maintain service quality.
-              </li>
-              <li>
-                As part of the AVAD team, developed and integrated advanced ad
-                solutions including pause ads, fast-forward ads, and ad
-                replacement for both live and VOD streaming services.
-              </li>
-              <li>
-                Engineered workflows to dynamically insert and replace
-                advertisements during playback, ensuring seamless user
-                experience and maximizing ad revenue.
-              </li>
-              <li>
-                Collaborated with cross-functional teams to design, implement,
-                and validate ad insertion logic for various streaming scenarios.
-              </li>
-              <li>
-                Monitored ad delivery performance and resolved issues related to
-                ad playback, synchronization, and targeting.
-              </li>
-              <li>
-                Provided detailed documentation and technical support for AVAD
-                features, enabling smooth handover and ongoing maintenance.
-              </li>
-              <li>
-                Contributed to the development and deployment of a wide variety
-                of advanced ad solutions aimed at enhancing user experience and
-                maximizing engagement across streaming platforms.
-              </li>
-              <li>
-                Collaborated with product managers, developers, and QA teams to
-                design, implement, and refine ad workflows including pause ads,
-                fast-forward ads, ad replacement, and dynamic ad insertion for
-                both live and VOD content.
-              </li>
-              <li>
-                Engineered robust automation scripts and monitoring tools to
-                validate ad delivery, playback synchronization, and targeting
-                accuracy, ensuring seamless integration with existing streaming
-                infrastructure.
-              </li>
-              <li>
-                Conducted in-depth analysis of user interaction data and ad
-                performance metrics to identify opportunities for optimization
-                and to drive continuous improvement of ad-related features.
-              </li>
-              <li>
-                Provided technical leadership and mentorship to junior
-                engineers, sharing best practices for scalable ad integration
-                and troubleshooting complex ad delivery scenarios.
-              </li>
-              <li>
-                Maintained comprehensive documentation for all ad solutions,
-                facilitating knowledge transfer and supporting ongoing
-                maintenance and future enhancements.
-              </li>
+            <ul class="list-disc ml-6 mt-2 text-gray-700 leading-relaxed">
+              <li>Supported feature deployments by coordinating with development and operations teams to ensure seamless integration.</li>
+              <li>Monitored deployment pipelines and resolved integration issues in real-time to minimize downtime.</li>
+              <li>Acted as a primary point of contact for client communications regarding integration requirements and deployment schedules.</li>
+              <li>Gathered client feedback and translated it into actionable improvements for integration processes.</li>
+              <li>Provided technical support and documentation to clients during and after feature rollouts.</li>
+              <li>Collaborated with the streaming team to support live and on-demand video delivery, ensuring high availability and performance.</li>
+              <li>Diagnosed and resolved streaming-related issues by analyzing logs and monitoring dashboards (Grafana, Kibana).</li>
+              <li>Automated validation of streaming endpoints and playback scenarios to maintain service quality.</li>
+              <li>As part of the AVAD team, developed and integrated advanced ad solutions including pause ads, fast-forward ads, and ad replacement for both live and VOD streaming services.</li>
+              <li>Engineered workflows to dynamically insert and replace advertisements during playback, ensuring seamless user experience and maximizing ad revenue.</li>
+              <li>Collaborated with cross-functional teams to design, implement, and validate ad insertion logic for various streaming scenarios.</li>
+              <li>Monitored ad delivery performance and resolved issues related to ad playback, synchronization, and targeting.</li>
+              <li>Provided detailed documentation and technical support for AVAD features, enabling smooth handover and ongoing maintenance.</li>
+              <li>Contributed to the development and deployment of a wide variety of advanced ad solutions aimed at enhancing user experience and maximizing engagement across streaming platforms.</li>
+              <li>Collaborated with product managers, developers, and QA teams to design, implement, and refine ad workflows including pause ads, fast-forward ads, ad replacement, and dynamic ad insertion for both live and VOD content.</li>
+              <li>Engineered robust automation scripts and monitoring tools to validate ad delivery, playback synchronization, and targeting accuracy, ensuring seamless integration with existing streaming infrastructure.</li>
+              <li>Conducted in-depth analysis of user interaction data and ad performance metrics to identify opportunities for optimization and to drive continuous improvement of ad-related features.</li>
+              <li>Provided technical leadership and mentorship to junior engineers, sharing best practices for scalable ad integration and troubleshooting complex ad delivery scenarios.</li>
+              <li>Maintained comprehensive documentation for all ad solutions, facilitating knowledge transfer and supporting ongoing maintenance and future enhancements.</li>
             </ul>
           </div>
           <div>
-            <h3 class="text-xl font-semibold">
-              Automation Engineer - [Infosys]
-            </h3>
+            <h3 class="text-2xl font-semibold text-gray-900">Automation Engineer - Infosys</h3>
             <p class="text-gray-600">April 2022 - Feb 2023</p>
-            <ul class="list-disc ml-6">
-              <li>
-                Automated end-to-end testing for web and mobile applications,
-                increasing test coverage.
-              </li>
-              <li>
-                Collaborated with cross-functional teams to identify and resolve
-                integration issues.
-              </li>
-              <li>
-                Designed automation scripts for system testing using JavaScript
-                and Docker.
-              </li>
-              <li>
-                Streamlined data integration processes, improving efficiency by
-                25%.
-              </li>
+            <ul class="list-disc ml-6 mt-2 text-gray-700 leading-relaxed">
+              <li>Automated end-to-end testing for web and mobile applications, increasing test coverage.</li>
+              <li>Collaborated with cross-functional teams to identify and resolve integration issues.</li>
+              <li>Designed automation scripts for system testing using JavaScript and Docker.</li>
+              <li>Streamlined data integration processes, improving efficiency by 25%.</li>
             </ul>
           </div>
         </div>
@@ -298,58 +167,43 @@
     </section>
 
     <!-- Education Section -->
-    <section id="education" class="py-10 bg-gray-100">
-      <div class="container mx-auto px-4">
-        <h2 class="text-2xl font-bold mb-4 text-center">Education</h2>
+    <section id="education" class="py-16 bg-gray-100">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold mb-6 text-center text-gray-900">Education</h2>
         <div>
-          <h3 class="text-xl font-semibold">
-            B.Tech in Civil Engineering - [Jawaharlal Nehru Technological
-            University, Anantapur]
-          </h3>
+          <h3 class="text-2xl font-semibold text-gray-900">B.Tech in Civil Engineering - Jawaharlal Nehru Technological University, Anantapur</h3>
           <p class="text-gray-600">2017 - 2021</p>
-          <p>
-            Specialized in Civil Engineering with a focus on software
-            development and automation technologies.
-          </p>
+          <p class="text-gray-700 leading-relaxed">Specialized in Civil Engineering with a focus on software development and automation technologies.</p>
         </div>
       </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-10 bg-white">
-      <div class="container mx-auto px-4 text-center">
-        <h2 class="text-2xl font-bold mb-4">Contact</h2>
-        <p>
-          Email:
-          <a
-            href="mailto:subbu22399@gmail.com"
-            class="text-blue-600 hover:underline"
-            >subbu22399@gmail.com</a
-          >
+    <section id="contact" class="py-16 bg-white">
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold mb-6 text-gray-900">Contact</h2>
+        <p class="mb-2">
+          Email: <a href="mailto:subbu22399@gmail.com" class="text-blue-600 hover:underline" aria-label="Email Urimilla Subbarayadu">subbu22399@gmail.com</a>
         </p>
-        <p>Mobile: <span class="text-gray-600">+91 6281154387</span></p>
-        <p>
-          LinkedIn:
-          <a
-            href="https://linkedin.com/in/urimilla-subbarayadu-911968199"
-            target="_blank"
-            class="text-blue-600 hover:underline"
-            >linkedin.com/in/urimilla-subbarayadu-911968199</a
-          >
+        <p class="mb-2 text-gray-700">Mobile: <span class="text-gray-600">+91 6281154387</span></p>
+        <p class="mb-2">
+          LinkedIn: <a href="https://linkedin.com/in/urimilla-subbarayadu-911968199" target="_blank" class="text-blue-600 hover:underline" aria-label="LinkedIn Profile">linkedin.com/in/urimilla-subbarayadu-911968199</a>
         </p>
         <p>
-          GitHub:
-          <a
-            href="https://github.com/Subbu22399"
-            target="_blank"
-            class="text-blue-600 hover:underline"
-            >github.com/Subbu22399</a
-          >
+          GitHub: <a href="https://github.com/Subbu22399" target="_blank" class="text-blue-600 hover:underline" aria-label="GitHub Profile">github.com/Subbu22399</a>
         </p>
       </div>
     </section>
 
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-6 right-6 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition-colors hidden" aria-label="Back to Top">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+      </svg>
+    </button>
+
     <script>
+      // Skills Filter
       function filterSkills(category) {
         const skills = document.querySelectorAll(".skill");
         skills.forEach((skill) => {
@@ -361,7 +215,7 @@
         });
       }
 
-      // Smooth scrolling for navigation
+      // Smooth Scrolling
       document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         anchor.addEventListener("click", function (e) {
           e.preventDefault();
@@ -369,6 +223,34 @@
             behavior: "smooth",
           });
         });
+      });
+
+      // Hamburger Menu Toggle
+      const menuToggle = document.getElementById("menu-toggle");
+      const navMenu = document.getElementById("nav-menu");
+      menuToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+        navMenu.classList.toggle("flex");
+        navMenu.classList.toggle("flex-col");
+        navMenu.classList.toggle("absolute");
+        navMenu.classList.toggle("top-16");
+        navMenu.classList.toggle("left-0");
+        navMenu.classList.toggle("right-0");
+        navMenu.classList.toggle("bg-blue-700");
+        navMenu.classList.toggle("p-4");
+      });
+
+      // Back to Top Button
+      const backToTop = document.getElementById("back-to-top");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+          backToTop.classList.remove("hidden");
+        } else {
+          backToTop.classList.add("hidden");
+        }
+      });
+      backToTop.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
       });
     </script>
   </body>
